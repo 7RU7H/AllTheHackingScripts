@@ -12,3 +12,7 @@ with open("newlist.txt", "a") as file:
         encodedBytes = base64.b64encode(concat.encode("utf-8"))
         b64Str = str(encodedBytes, "utf-8")
         file.write(f"{b64Str}\n")
+        
+WORDLIST.close()
+OUTPUT.close()
+exit()
