@@ -1,6 +1,14 @@
-# Hacking-scripts
+DISCLAIMER
 
-Just a place for all those cool scripts I have found or made that have come in use.
+# TODO
+# percentage script to show how much this is NOT my work!
+
+Inspired by PayloadAllTheThings, a place for all those cool scripts I have found or made that have come in use.
+An archive to store everything and pay tribute to those that have helped me in solving problems, taught me to code and hack.
+
+Every piece of code that was not written by me, - still figuring out github - the person or group gets a followed and starred.
+
+
 There are one(-ish*)-liners and concept files per language.
 I trying to refactor for each language as and when I need to, therefore if am not using it I am not refactoring to it or writing from scratch or finding scripts.
 I separated one-liner out from my own cheatsheets for the purpose of archiving and more importantly finding, remembering and using them more
