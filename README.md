@@ -1,7 +1,7 @@
 DISCLAIMER
 
 # TODO
-# percentage script to show how much this is NOT my work!
+percentage script to show how much this is NOT my work!
 
 Inspired by PayloadAllTheThings, a place for all those cool scripts I have found or made that have come in use.
 An archive to store everything and pay tribute to those that have helped me in solving problems, taught me to code and hack.
