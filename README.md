@@ -5,8 +5,7 @@ Any refactored stuff or the idea to add to should have a a reference. If not ple
 
 # TODO 
 Find or make percentage script to show how much this is NOT my work!
-
-findAllEncoding.sh Not working!
+correctFileEnc.sh Not working! -> change to find fileencoding aswell
 
 Inspired by PayloadAllTheThings, a place for all those cool scripts I have found or made that have come in use.
 An archive to store everything and pay tribute to those that have helped me in solving problems, taught me to code and hack.
