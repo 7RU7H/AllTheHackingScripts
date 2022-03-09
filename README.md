@@ -1,7 +1,12 @@
 DISCLAIMER
 
-# TODO
-percentage script to show how much this is NOT my work!
+This contains alot of refactored or improved scripts, anything that is not mine is referenced
+Any refactored stuff or the idea to add to should have a a reference. If not please message me so I can attribute.
+
+# TODO 
+Find or make percentage script to show how much this is NOT my work!
+
+findAllEncoding.sh Not working!
 
 Inspired by PayloadAllTheThings, a place for all those cool scripts I have found or made that have come in use.
 An archive to store everything and pay tribute to those that have helped me in solving problems, taught me to code and hack.
