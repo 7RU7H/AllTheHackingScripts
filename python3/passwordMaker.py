@@ -1,8 +1,11 @@
 import hashlib
+#import sha512_crypt
+
+#pip install sha512_crypt
 
 # Random salts, ordering more hashtypes
 print("Create a salted or unsalted password hash")
-print("Hashes avaliable: sha1, sha256, sha512")
+print("Hashes avaliable: sha1, sha256, sha512, soon sha512_crypt")
 hashtype = input("Enter a hash type: ")
 password = input("Enter a password: ")
 salt = input("Enter a salt: ")
@@ -23,6 +26,8 @@ if hashtype != "":
         digest = hashlib.sha256(cleartext.encode()).hexdigest()
     elif hashtype == "sha512":
         digest = hashlib.sha512(cleartext.encode()).hexdigest()
+    #elif hashtype == "sha512_crypt":
+    #    digest = sha512_crypt.encrypt(cleartext)
     else:
         print(f"[-] {hashtype} Not a valid hash type")
 else:
