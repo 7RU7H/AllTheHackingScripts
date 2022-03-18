@@ -7,6 +7,7 @@ LIST=$(ls /usr/share/nmap/scripts/ | grep "$SERVICE")
 echo $LIST > scriptsReq.txt 
 FILE=$(cat scriptsReq.txt)
 for SCRIPT in $FILE; do
+	echo "Script: $SCRIPT"
 	nmap --script $SCRIPT -p $PORT $IP
 	wait
 done
