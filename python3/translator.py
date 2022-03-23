@@ -1,4 +1,6 @@
+#!
 # pip3 install translate
+#https://www.udemy.com/course/complete-ethical-hacking-bootcamp-zero-to-mastery/
 from translate import Translator
 
 LANG = input("Input a compatible language to translate to:" )
