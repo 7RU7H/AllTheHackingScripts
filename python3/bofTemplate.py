@@ -1,7 +1,7 @@
 from struct import pack
 
 nop = '\x90'
-
+junk = '\xCC' # graceful break
 buf =  b""
 # buf += ""
 
