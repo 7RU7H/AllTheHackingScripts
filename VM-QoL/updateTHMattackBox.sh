@@ -7,9 +7,8 @@ pip3 install --upgrade pip;
 python3 -m pip install pipx
 pipx ensurepath
 pipx install crackmapexec
-apt install redis-tools;
-apt install smbclient;
-apt install hexedit;
+apt install redis-tools smbclient hexedit
+apt upgrade -y
 # apt update; apt install metasploit-framework; -msf5 ! on attackbox
 git clone https://github.com/ShawnDEvans/smbmap.git;
 git clone https://github.com/rebootuser/LinEnum.git;
