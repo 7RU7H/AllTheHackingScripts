@@ -35,7 +35,10 @@ $Searcher = New-Object System.DirectoryServices.DirectorySearcher([ADSI]$SearchS
 $objDomain = New-Object System.DirectoryServices.DirectoryEntry($SearchString, "corp.com\offsec", "lab")
 # Search root is the node in the AD hierarchy where search starts
 $Searcher.SearchRoot = $objDomain
-# Filter through Object
+
+
+
+# Filter through Objects
 # Filter through samAccountType attribute
 #$Searcher.filter="name=$AdminAccount"
 $Searcher.filter="samAccountType=805306368"
@@ -52,3 +55,27 @@ Foreach($obj in $Result)
     Write-Host "------------------------"
 }
 
+# TODO - Recursive list Nested Group in Function, if name is passed search from that group name
+
+# Resolving Nested groups
+# Extract all records, printing the Nname field
+$Searcher.filter="(objectClass=Group)"
+
+$Result = $Searcher.FindAll()
+
+Foreach($obj in $Result)
+{
+    $obj.Properties.name
+}
+
+# 
+Enumerate_Group_Name="BilloGaltoGroup"
+# Enumerate members of a group
+$Searcher.filter="(name=$Enumerate_Group_Name)"
+
+$Result = $Searcher.FindAll()
+
+Foreach($obj in $Result)
+{
+    $obj.Properties.member
+}
