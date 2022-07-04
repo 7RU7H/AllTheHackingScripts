@@ -57,6 +57,13 @@ Foreach($obj in $Result)
 
 # TODO - Recursive list Nested Group in Function, if name is passed search from that group name
 
+###################
+# 		  #
+# Enumerate Groups #
+#		  #
+###################
+
+
 # Resolving Nested groups
 # Extract all records, printing the Nname field
 $Searcher.filter="(objectClass=Group)"
@@ -79,3 +86,25 @@ Foreach($obj in $Result)
 {
     $obj.Properties.member
 }
+
+###################
+# 		  #
+# Enumerate SPNs  #
+#		  #
+###################
+
+# TODO spn more suitable or a list of spns...
+$Searcher.filter="serviceprincipalname=*http*"
+
+$Result = $Searcher.FindAll()
+
+Foreach($obj in $Result)
+{
+	    Foreach($prop in $obj.Properties)
+	        {
+			$prop
+		}
+}
+
+# if .samaccountname {
+# nslookup(.serviceprincipalname) 
