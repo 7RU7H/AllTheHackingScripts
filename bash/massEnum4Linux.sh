@@ -5,5 +5,5 @@ if [ "$#" -ne 1 ]; then
 	exit
 fi
 
-grep $1 -r 445/open | awk '{print $2}' | xargs -I@ sh -c 'for x in "@"; do enum4linux -a $x; done'
+grep $1 -r 445/open | awk '{print $2}' | xargs -I@ sh -c 'for x in "@"; do enum4linux -a $x | tee -a enumFourLinux$x; done'
 
