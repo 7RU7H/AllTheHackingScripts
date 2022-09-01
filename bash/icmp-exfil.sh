@@ -7,8 +7,8 @@ fi
 
 data=$(cat $1)
 for line in $data; do
-	foricmp=$(echo $line | xxd -p)
-	ping $ip -c 1 -p $foricmp
+	hexconv=$(echo $line | xxd -p)
+	ping $2 -c 1 -p $hexconv
 done
 exit
 
