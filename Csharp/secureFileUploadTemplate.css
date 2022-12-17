@@ -1,0 +1,56 @@
+// AoC Secure coding   
+public IActionResult OnPostUpload(FileUpload fileUpload)
+    {
+        var allowed = True;
+
+        //Store file outside the web root   
+        //There was a mistake on the original with the escaping file path, but insert a secure file path here regardless
+	var fullPath = ""
+
+        var formFile = fileUpload.FormFile;
+
+        //Create a GUID for the file name
+        Guid id = Guid.NewGuid();
+        var filePath = Path.Combine(fullPath, id + ".pdf");
+
+        //Validate the content type
+        string contentType = fileUpload.ContentType.Split('/')[1].ToLower();
+        if !(contentType.equals("ContentType=PDF")
+            {
+                allowed = False;
+            }
+
+       //Validate the content extension
+       string contentExtension = Path.GetExtension(fileUpload);
+       if !(contentExtension.equals("PDF"))
+           {
+               allowed = False;
+           }
+
+       //Validate the content size
+       int contentSize = fileUpload.ContentLength;
+       //10Mb max file size
+       int maxFileSize = 10 * 1024 * 1024
+       if (contentSize > maxFileSize)
+           {
+               allowed = False;
+           }
+
+       //Scan the content for malware
+       var clam = new ClamClient(this._configuration["ClamAVServer:URL"],Convert.ToInt32(this._configuration["ClamAVServer:Port"])); 
+       var scanResult = await clam.SendAndScanFileAsync(fileBytes);  
+  
+       if (scanResult.Result == ClamScanResults.VirusDetected)
+           {
+                allowed = False;
+           };
+
+       //Only upload if all checks are passed
+       if (allowed)
+       {
+            using (var stream = System.IO.File.Create(filePath))
+                {
+                    formFile.CopyToAsync(stream);
+                }
+       }
+    }
