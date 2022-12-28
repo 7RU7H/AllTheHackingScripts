@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: some-pod
+  namespace: kube-system
+spec:
+  containers:
+    - name: shell
+      image: null
+      command: ['/bin/sh']
+      args: ['-c', 'sleep 300000']
+      volumeMounts:
+        - mountPath: /mnt
+          name: hostfs
+  volumes:
+    - name: hostfs
+      hostPath:
+        path: /
+  automountServiceAccountToken: true
+  hostNetwork: true
+
