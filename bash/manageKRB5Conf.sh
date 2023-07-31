@@ -4,7 +4,8 @@
 
 if [ "$#" -ne 4 ]; then
         echo "Usage: $0 <cmd: add / remove>/ setup <realm> <kdc> <admin_server>"
-        echo "run \`sudo apt-get install krb5-user\' - put: \`KALI\` as default in all capitals, no \` for adding and removing a default realm"
+        echo "Run \`sudo apt-get install krb5-user\' - put: \`KALI\` as default in all capitals, no \` for adding and removing a default realm"
+	echo "And backup just incase\`sudo cp /etc/krb5.conf /etc/krb5.conf\`"
         exit
 fi
 
