@@ -1,0 +1,15 @@
+python3 -m venv vol3
+vol3/Scripts/Activate.ps1
+cd vol3
+cd vol3/
+git clone https://github.com/volatilityfoundation/volatility3.git
+cd volatility3/
+python setup.py install
+pip install pycryptodome
+
+# to see plug-ins vol has to offer, following the command from windows:
+vol --help
+# linux or  mac use:
+python vol.py --help
+
+# research functionality of plugins lots of cool stuff can be done!

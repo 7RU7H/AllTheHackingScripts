@@ -1,0 +1,3 @@
+Firstly this include locating jpgs present in pcap streams and a detector that detirmines whether the image contains a face or not.
+For the second pass run through of building better tools out of blackhatpy files, this note is here so I dont need to reread the book
+wonding why there is image processing and file searching for .jpg or whatever

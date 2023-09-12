@@ -1,0 +1,21 @@
+TO WORK NEEDS
+GITHUB account,
+git commit -m "Adds repo structure for trojan."
+git remote add origin https:/github.com/<useranem>/bhptrojan.git
+git push origin master
+
+After learning material try with your own server machine for ethical hacking rather than git
+Githut is used to stash third-party libraries so you have to recompile your trojan every time add functionality
+Also person access tokens
+
+
+git add .
+git commit -m "Adds new modules"
+git push origin  master
+Username: ********
+Password: ********
+
+
+Integration of later modules is manually required and not covered in the book for homework purposes.
+
+A config file give us a level of control, using ids 

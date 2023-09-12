@@ -1,0 +1,7 @@
+pyinstaller -F --hiddenimport win32timezone bhservice.py
+bhservice.exe install
+bhservice.exe start
+bhservice.exe stop
+
+
+C:\WINDOWS\TEMP\bhservice_task.vbs
