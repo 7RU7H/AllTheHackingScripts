@@ -23,10 +23,16 @@ echo "#### \`strings -e l\`" | tee -a $1.enumdata
 strings -e l $1 | tee -a $1.enumdata $1.strings-el
 echo "" | tee -a $1.enumdata
 echo "#### \`checksec\`" | tee -a $1.enumdata
-checksec $1 | tee -a $1.enumdata $1.checksec
+checksec --verbose --file=$1 | tee -a $1.enumdata $1.checksec
 echo "" | tee -a $1.enumdata
 echo "#### \`checksec\`" | tee -a $1.enumdata
 ldd $1 | tee -a $1.enumdata $1.ldd
+echo "" | tee -a $1.enumdata
+echo "#### \`objdump -i\`" | tee -a $1.enumdata
+objdump -i  $1 | tee -a $1.enumdata $1.objdump
+echo "" | tee -a $1.enumdata
+echo "#### \`objdump -D\`" | tee -a $1.enumdata
+objdump -D $1 | tee -a $1.enumdata $1.objdump
 echo ""
 echo "================================="
 echo "Install angr for Binary Analysis!"
