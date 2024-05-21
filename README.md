@@ -24,3 +24,28 @@ I separated one-liner out from my own cheatsheets for the purpose of archiving a
 https://gist.github.com/mzfr 
 
 https://tryhackme.com/room/pythonforcybersecurity
+
+bash/sshspy.sh:# From: https://www.infosecmatter.com/ssh-sniffing-ssh-spying-methods-and-defense/
+bash/manageKRB5Conf.sh:function removeFromKRB5Conf ()
+bash/manageKRB5Conf.sh:        remove) removeFromKRB5Conf $2 $3 $4 $5 ;;
+python3/8L4ckH47-Python-Book/screenshotter.py:    img_dc = win32ui.CreateDCFromHandle(desktop_dc)
+python3/8L4ckH47-Python-Book/email_exfil.py:    message = f'Subject: {subject}\nFrom {smtp_acct}\n'
+Cplusplus/hollowing-injector.cpp:// From https://tryhackme.com/room/abusingwindowsinternals
+Cplusplus/DLL-Injection/dll-injector.c:// From https://tryhackme.com/room/abusingwindowsinternals
+Cplusplus/DLL-Injection/dllmain.cpp:// From https://tryhackme.com/room/abusingwindowsinternals
+Cplusplus/thread-injector.cpp:// From https://tryhackme.com/room/abusingwindowsinternals
+PowerShell/Enum-Win-Defenses/README.md:`#recipe=From_Base64('A-Za-z0-9-_',false,false)Remove_null_bytes()`
+PowerShell/AD-DCOM-HTA.ps1:     $com = [activator]::CreateInstance([type]::GetTypeFromProgId("$applicationName.Application", "$IP"))
+PowerShell/AD-DCOM-HTA.ps1:$com = [activator]::CreateInstance([type]::GetTypeFromProgId($Application, $IP))
+PowerShell/Spray-Passwords.ps1:                            $then = [DateTime]::FromFileTime($badpwdtime)
+PowerShell/StartupPersistenceScript.ps1:# From https://tryhackme.com/r/room/windowsuseraccountforensics
+Csharp/Encryptor.cs:// From https://tryhackme.com/room/avevasionshellcode
+Csharp/keylogger.cs://From https://tryhackme.com/room/windowsapi
+Csharp/shellcode-launcher.cs:// From https://tryhackme.com/room/windowsapi
+
+bash/vpn-down.sh:# Author: BHIS - Michael Allen
+bash/Curlculator.sh:# Author 7ru7h
+bash/manageKRB5Conf.sh:# Author: 7ru7h
+python3/angr-binaryAnalysis.py:# Author XCT from https://www.youtube.com/watch?v=UnZj5zzcBG4
+PowerShell/Spray-Passwords.ps1:    Authored by    : Jakob H. Heidelberg / @JakobHeidelberg / www.improsec.com
+Csharp/Stager.cs:// Original Author: @mvelazc0
