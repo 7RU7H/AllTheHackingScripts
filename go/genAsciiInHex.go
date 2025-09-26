@@ -1,7 +1,7 @@
-import main
+package main
 
 import (
-  "fmt"
+	"fmt"
 	"strconv"
 	"strings"
 )
