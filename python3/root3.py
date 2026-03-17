@@ -1,0 +1,48 @@
+import time
+import os
+
+frames = [
+r"""
+  ██████╗ ██████╗ ██████╗ ██████╗
+  ██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+  ██████╔╝██████╔╝██████╔╝██████╔╝
+  ██╔═══╝ ██╔═══╝ ██╔═══╝ ██╔═══╝
+  ██║     ██║     ██║     ██║    
+  ╚═╝     ╚═╝     ╚═╝     ╚═╝    
+  
+   \m/ WUBBA LUBBA DERPY METAL \m/
+   AZURA ALII ROOT FLAG
+""",
+r"""
+  ░█▀▀░█▀▀░█▀▀░█▀▀░█▀▀░
+  ░█░█░█▀▀░█▀▀░█▀▀░▀▀█░
+  ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░
+  
+   RICK SQUANCH DANCE! \m/
+   AZURA ALII FLAG
+""",
+r"""
+  ███╗   ███╗ █████╗ ██████╗ 
+  ████╗ ████║██╔══██╗██╔══██╗
+  ██╔████╔██║███████║██████╔╝
+  ██║╚██╔╝██║██╔══██║██╔═══╝ 
+  ██║ ╚═╝ ██║██║  ██║██║     
+  ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     
+  
+   DERP MODE ENGAGED! \m/
+   ROOT FLAG: AZURA ALII
+"""
+]
+
+root_flag = "FLAG{AZURA_ALII_HEAVY_METAL_DERPY}"
+
+try:
+    while True:
+        for i, frame in enumerate(frames):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(frame)
+            print("\n", root_flag)
+            time.sleep(1.2)
+except KeyboardInterrupt:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("Derpy metal dance stopped. Flag remains safe for Azura Alii.")
